@@ -109,6 +109,7 @@
         .header-icons {
             display: flex;
             gap: 5px;
+            align-items: center;
         }
         .header-icons a {
             color: #4a3f34;
@@ -127,6 +128,40 @@
             position: absolute;
             top: -10px;
             right: -12px;
+        }
+
+        /* === КНОПКА МАРКЕТИНГОВАЯ СТРАТЕГИЯ - ПЕРЕЛИВАЮЩАЯСЯ === */
+        .header-btn {
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            
+            /* Анимация переливающегося градиента */
+            background: linear-gradient(45deg, #4a6b8a, #6a4c8a, #3a8a8a, #8a4c6a);
+            background-size: 300% 300%;
+            color: white;
+            
+            /* Обводка */
+            box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #6b4f3c;
+            
+            /* Анимация движения градиента */
+            animation: gradientFlow 5s ease infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #b48a5c;
         }
 
         /* === Остальные стили (без изменений, для краткости оставлю только важное) === */
@@ -440,6 +475,7 @@
             }
             .header-icons {
                 justify-content: flex-end;
+                flex-wrap: wrap;
             }
         }
 
@@ -570,6 +606,14 @@
                 flex-direction: column;
                 gap: 18px;
             }
+            
+            /* Компактная кнопка на мобильных */
+            .header-btn {
+                padding: 4px 12px;
+                font-size: 0.8rem;
+                margin-left: 5px;
+                border-width: 2px;
+            }
         }
 
         @media (max-width: 360px) {
@@ -597,20 +641,6 @@
                 height: 30px;
                 line-height: 30px;
             }
-            .header-btn {
-    background: #ccc7e9;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    margin-left: 10px;
-    transition: background 0.2s;
-}
-
-.header-btn:hover {
-    background: #9c7248;
-}
         }
     </style>
 </head>
